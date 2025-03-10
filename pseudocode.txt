@@ -1,0 +1,325 @@
+1. Student Grade Calculator
+
+start
+ Input assignment_score,midterm_score,final_exam_score
+   final_grade = (assignment_score * 0.30) + (midterm_score * 0.30) + (final_exam_score * 0.40)
+
+    IF final_grade >= 60 THEN
+        status = "Passed"
+    ELSE
+        status = "Failed"
+    END IF
+    print"Final Grade: " + final_grade
+    print"Status: " + status
+
+END
+
+
+2. ATM Banking System
+
+
+START
+
+    SET balance = 0
+    SET pin = "1234"
+
+    FUNCTION authenticate():
+        input PIN
+        IF PIN == pin 
+            RETURN True
+        ELSE
+            RETURN False
+
+    FUNCTION display_menu():
+        PRINT "1. Check Balance"
+        PRINT "2. Deposit Money"
+        PRINT "3. Withdraw Money"
+        PRINT "4. Exit"
+
+    FUNCTION check_balance():
+        PRINT "Balance:", balance
+
+    FUNCTION deposit_money():
+        input amount
+        IF amount > 0 
+            ADD amount to balance
+            PRINT "Deposited. New balance:", balance
+
+    FUNCTION withdraw_money():
+        input amount
+        IF amount > 0 AND amount <= balance THEN
+            SUBTRACT amount from balance
+            PRINT "Withdrew. New balance:", balance
+        ELSE
+            PRINT "Insufficient funds or invalid amount."
+
+    FUNCTION run_atm():
+        IF authenticate() is False THEN
+            EXIT
+        END IF
+
+        WHILE True:
+            display_menu()
+            input option
+            IF option == 1 THEN check_balance()
+            ELSE IF option == 2 THEN deposit_money()
+            ELSE IF option == 3 THEN withdraw_money()
+            ELSE IF option == 4 THEN EXIT
+
+END
+
+
+
+
+3. Inventory Management System
+
+
+START
+
+    // Initialize an empty inventory list
+    INVENTORY = []
+
+    WHILE True:
+        PRINT "Menu:"
+        PRINT "1. Add Product"
+        PRINT "2. Update Product"
+        PRINT "3. Remove Product"
+        PRINT "4. Search Product"
+        PRINT "5. Display Inventory"
+        PRINT "6. Track Low Stock"
+        PRINT "7. Generate Report"
+        PRINT "8. Exit"
+        
+     input option
+
+        IF option == 1 THEN
+            input (ID, Name, Price, Quantity)
+           
+            IF product with given ID exists in INVENTORY THEN
+                PRINT "Product with this ID already exists."
+            ELSE
+                CREATE product with ID, Name, Price, Quantity
+                ADD product to INVENTORY
+                PRINT "Product added successfully."
+
+        ELSE IF option == 2 THEN
+          input productid,Name, Price, Quantity
+           
+            IF product found THEN
+                
+                UPDATE product's Name, Price, and Quantity
+                PRINT "Product updated successfully."
+            ELSE
+                PRINT "Product not found."
+
+        ELSE IF option == 3 THEN
+           input product ID
+           
+            IF product found THEN
+                REMOVE product from INVENTORY
+                PRINT "Product removed successfully."
+            ELSE
+                PRINT "Product not found."
+
+        ELSE IF option == 4 THEN
+            input ID or Name
+            
+            FOR EACH product in INVENTORY:
+                IF search term matches product ID or Name THEN
+                    PRINT product details
+            IF no match found THEN
+                PRINT "No product found."
+
+        ELSE IF option == 5 THEN
+            IF INVENTORY is empty THEN
+                PRINT "Inventory is empty."
+            ELSE
+                PRINT "Inventory List:"
+                FOR EACH product in INVENTORY:
+                    PRINT product details (ID, Name, Price, Quantity)
+
+        ELSE IF option == 6 THEN
+            PROMPT user for low stock threshold
+     
+            FOR EACH product in INVENTORY:
+                IF product's quantity < threshold THEN
+                    PRINT product details (ID, Name, Price, Quantity)
+
+        ELSE IF option == 7 THEN
+         
+            PRINT "Inventory Report:"
+            FOR EACH product in INVENTORY:
+                PRINT product details (ID, Name, Price, Quantity)
+
+        ELSE IF option == 8 THEN
+            PRINT "Exiting..."
+            BREAK
+
+END
+
+4. Prime Number Checker
+
+
+
+START
+
+    WHILE True:
+        PROMPT user for a number
+        
+        IF input is not a positive integer:
+            PRINT "Invalid input."
+            CONTINUE
+
+        number = user input
+        
+        IF number <= 1:
+            PRINT number, "is not prime."
+        ELSE:
+            IS_PRIME = True
+            FOR i from 2 to sqrt(number):
+                IF number % i == 0:
+                    IS_PRIME = False
+                    BREAK
+            IF IS_PRIME:
+                PRINT number, "is prime."
+            ELSE:
+                PRINT number, "is not prime."
+        
+        PROMPT user: "Check another number? (y/n)"
+        IF input is 'n':
+            BREAK
+
+END
+
+
+5. Temperature Conversion Tool
+
+START
+
+    WHILE True:
+        input_temperature = INPUT "Enter temperature value: "
+        input_source_unit = INPUT "Enter source unit (C, F, K): "
+        input_target_unit = INPUT "Enter target unit (C, F, K): "
+        
+        IF input_source_unit is 'C' AND input_target_unit is 'F':
+            result = (input_temperature * 9/5) + 32
+            PRINT result, "°F"
+        ELSE IF input_source_unit is 'C' AND input_target_unit is 'K':
+            result = input_temperature + 273.15
+            PRINT result, "K"
+        ELSE IF input_source_unit is 'F' AND input_target_unit is 'C':
+            result = (input_temperature - 32) * 5/9
+            PRINT result, "°C"
+        ELSE IF input_source_unit is 'F' AND input_target_unit is 'K':
+            result = ((input_temperature - 32) * 5/9) + 273.15
+            PRINT result, "K"
+        ELSE IF input_source_unit is 'K' AND input_target_unit is 'C':
+            result = input_temperature - 273.15
+            PRINT result, "°C"
+        ELSE IF input_source_unit is 'K' AND input_target_unit is 'F':
+            result = ((input_temperature - 273.15) * 9/5) + 32
+            PRINT result, "°F"
+        
+        input_continue = INPUT "Convert another? (y/n): "
+        IF input_continue is 'n':
+            BREAK
+
+END
+
+
+6. Library Book Management System
+
+START
+
+    BOOKS = []  // List of books
+    MEMBERS = []  // List of members
+
+    WHILE True:
+        PRINT "1. Add Book 2. Remove Book 3. Check Out 4. Return Book 5. Search 6. Overdue Report 7. Exit"
+        input_option = INPUT "Select option: "
+
+        IF input_option == 1:
+            ADD book (title, author, ISBN) to BOOKS
+            PRINT "Book added."
+        
+        ELSE IF input_option == 2:
+            REMOVE book by ISBN from BOOKS
+            PRINT "Book removed."
+        
+        ELSE IF input_option == 3:
+            CHECK OUT book to member with due date
+            PRINT "Book checked out."
+
+        ELSE IF input_option == 4:
+            RETURN book, calculate late fee if applicable
+            PRINT "Book returned."
+        
+        ELSE IF input_option == 5:
+            SEARCH book by title, author, or ISBN
+            PRINT book details
+
+        ELSE IF input_option == 6:
+            PRINT overdue books report
+        
+        ELSE IF input_option == 7:
+            PRINT "Exiting..."
+            BREAK
+
+END
+
+
+7. Fibonacci Sequence Generator
+
+START
+
+    input_terms = INPUT "Enter number of terms: "
+    
+    IF input_terms is not a positive integer OR input_terms <= 0:
+        PRINT "Invalid input."
+        EXIT
+
+    a = 0
+    b = 1
+
+    PRINT "Fibonacci Sequence:"
+    PRINT a
+    PRINT b
+    
+    FOR i from 3 to input_terms:
+        c = a + b
+        PRINT c
+        a = b
+        b = c
+
+    input_continue = INPUT "Do you want to generate another sequence? (y/n): "
+    IF input_continue is 'n':
+        BREAK
+
+END
+
+8. Calendar Event Scheduler
+
+START
+
+    EVENTS = []
+
+    WHILE True:
+        PRINT "1. Add 2. View 3. Delete 4. Search 5. Exit"
+        input_option = INPUT "Select: "
+
+        IF input_option == 1:
+            input_title, input_date, input_time, input_desc = INPUT "Enter title, date, time, desc: "
+            IF valid(input_date, input_time): ADD event
+        ELSE IF input_option == 2:
+            input_view = INPUT "View (day/week/month): "
+            PRINT events for input_view
+        ELSE IF input_option == 3:
+            input_id = INPUT "Delete event ID: "
+            REMOVE event
+        ELSE IF input_option == 4:
+            input_search = INPUT "Search title/desc: "
+            PRINT matching events
+        ELSE IF input_option == 5:
+            BREAK
+
+END
