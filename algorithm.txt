@@ -1,0 +1,178 @@
+1. Algorithm for Calendar Event Scheduler:
+
+
+Start
+Input events list.
+While True:
+Display menu options: Add, View, Delete, Search, Exit.
+Input option.
+If option == Add:
+Input event title, date, time, description.
+If valid date/time, Add event to events list.
+If option == View:
+Input view type (day/week/month).
+Display events for selected view.
+If option == Delete:
+Input event ID.
+Remove event by ID from events list.
+If option == Search:
+Input search term.
+Display matching events.
+If option == Exit:
+Exit the program.
+End
+
+2.Algorithm for ATM Banking System:
+
+
+Start
+Input PIN for authentication.
+If PIN is correct:
+Set initial balance to 0.
+While True:
+Display menu options: Check Balance, Deposit, Withdraw, Exit.
+Input option.
+If option == Check Balance:
+Display current balance.
+If option == Deposit:
+Input deposit amount.
+Update balance with deposit.
+If option == Withdraw:
+Input withdrawal amount.
+If withdrawal ≤ balance:
+Update balance after withdrawal.
+Display receipt (amount withdrawn).
+Else:
+Display error (insufficient funds).
+If option == Exit:
+Exit the program.
+End
+
+
+3.Algorithm for Inventory Management System:
+
+
+Start
+Input inventory list (empty initially).
+While True:
+Display menu options: Add Item, Update Item, Remove Item, Search Item, Display Inventory, Exit.
+Input option.
+If option == Add Item:
+Input item ID, name, price, quantity.
+Add item to inventory.
+If option == Update Item:
+Input item ID.
+If item exists:
+Input new quantity or price.
+Update item in inventory.
+Else:
+Display error (item not found).
+If option == Remove Item:
+Input item ID.
+Remove item from inventory.
+If option == Search Item:
+Input item ID or name.
+Display matching item details.
+If option == Display Inventory:
+Display all items with ID, name, price, quantity.
+If option == Exit:
+Exit the program.
+End
+
+
+
+4.Algorithm for Prime Number Checker:
+
+Start
+Input number.
+If number is valid (positive integer):
+If number ≤ 1:
+Display "Not prime".
+Else:
+Set is_prime to True.
+For each integer i from 2 to √number:
+If number % i == 0:
+Set is_prime to False.
+Break the loop.
+If is_prime == True:
+Display "Prime".
+Else:
+Display "Not prime".
+Input "Do you want to check another number? (y/n)".
+If y: Go to step 2.
+If n: Exit the program.
+End
+
+
+5.Algorithm for Temperature Conversion Tool:
+
+Start
+Input temperature value.
+Input source unit (C, F, or K).
+Input target unit (C, F, or K).
+If source unit == C:
+If target unit == F: Convert using formula: F = (C * 9/5) + 32.
+If target unit == K: Convert using formula: K = C + 273.15.
+If source unit == F:
+If target unit == C: Convert using formula: C = (F - 32) * 5/9.
+If target unit == K: Convert using formula: K = (F - 32) * 5/9 + 273.15.
+If source unit == K:
+If target unit == C: Convert using formula: C = K - 273.15.
+If target unit == F: Convert using formula: F = (K - 273.15) * 9/5 + 32.
+Display converted result with appropriate unit.
+Input "Do you want to perform another conversion? (y/n)".
+If y: Go to step 2.
+If n: Exit the program.
+End
+
+6. Algorithm for Library Book Management System:
+
+Start
+Input list of books and members.
+While True:
+Display menu options: Add, Remove, Checkout, Return, Search, Exit.
+Input option.
+If Add: Input book details and add to database.
+If Remove: Input book ISBN and remove it.
+If Checkout: Input book ISBN and member ID. If available, check out the book.
+If Return: Input book ISBN and member ID. If late, calculate late fee and return the book.
+If Search: Input search term and display matching books.
+If Exit: Exit program.
+End
+
+7.Algorithm for Fibonacci Sequence Generator:
+Start
+Input number of terms (n).
+If n is valid (positive integer within limits):
+Initialize first two terms: a = 0, b = 1.
+For i = 1 to n:
+Display term a.
+Set a, b = b, a + b (generate next term).
+Optionally, ask to save sequence to file.
+If yes, save sequence to file.
+End
+
+
+
+8. Algorithm for Calendar Event Scheduler:
+Start
+Input event list (empty initially).
+While True:
+Display menu options: Add Event, View Events, Delete Event, Search Events, Exit.
+Input option.
+If option == Add Event:
+Input event title, date, time, description.
+Validate date and time.
+Add event to list.
+If option == View Events:
+Input view option (day/week/month).
+Display events for selected view.
+If option == Delete Event:
+Input event ID.
+Remove event from list.
+If option == Search Events:
+Input search term (title/description).
+Display matching events.
+If option == Exit:
+Exit program.
+End
